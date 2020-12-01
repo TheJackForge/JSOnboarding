@@ -7,7 +7,9 @@ module.exports = {
         roboto: ['Roboto']
       },
       colors: {
-      lime: '#84CC16'
+      lime: '#84CC16',
+      aqua: '#01cdfe',
+      vyellow: '#fffb96'
       },
     },
   },

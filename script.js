@@ -55,24 +55,26 @@ function assignVariables() {
 
     <p class="border-b border-r border-pink-500 inline-block pr-4">METHOD LET</p>
 
-    <p class="mb-5">Method <span class="text-purple-500">let</span> allows more flexibility when declaring variable. It can be changed and augmented as the operator/developer sees fit. Be aware that by allowing change, it can lead to your code becoming unstable</p>
+    <p class="mb-5">Method <span class="text-purple-500">let</span> allows more flexibility when declaring variable. It can be changed and augmented as the operator/developer sees fit. Be aware that by allowing change, it can lead to your code inadvertently becoming unstable</p>
     
     <small>Example of Declaring Variables</small>
 
-    <div class="bg-black text-xs pl-2 pt-2 pb-2">
+    <div class="bg-black text-xs pl-2 pt-2 pb-2 mb-5">
     <p><span class="text-purple-500">const</span> insertionTeam1 = 5;</p> 
     <p class="mb-2">// The number of members on this insertion team <span class="text-lime">CANNOT</span> be changed at any point in time.</p>
 
     <p><span class="text-purple-500">let</span> insertionTeam2 = 5;</p>
     <p class="mb-2">// The number of members on this insertion team <span class="text-lime">CAN</span> be changed at any point in time.</p>
 
-    <p>If at any point in the mission you change the amount of members on insertionTeam1, the <span class="text-purple-500">const</span> declaration will cause the system to output an error. However, because of the <span class="text-purple-500">let</span> declaration you can change the number of members on insertionTeam2 at anytime.</p>
+    <p class>If at any point in the mission you change the amount of members on insertionTeam1, the <span class="text-purple-500">const</span> declaration will cause the system to output an error. However, because of the <span class="text-purple-500">let</span> declaration you can change the number of members on insertionTeam2 at anytime.</p>
     </div>
 
+    <small>Please answer the following questions</small>
+    <p>1. If you are tasked with operating a top secret mission, and are forbidden from bringing in any extra operatives. You would need to use the <input id="const1" class="bg-black text-aqua mr-1 ml-1 items-center h-5 w-20"></input>declaration. </p>
+    <button id="const1Btn" class="text-aqua text-xs items-center bg-black pr-1 pl-1 mt-2 mb-4">
+    PROCESS ANSWER</button>  
 
-
-
-
+    <p class="mb-5">2. While monitoring your teams vital stats, you notice that their health begins to deteriorate. You feel that sending in a Stim-Operative would be beneficial to the team. To increase the number of members on the team, you would need to use the <input></input> declaration.</p>
     `
     main.appendChild(assignVariableDiv)
 }
@@ -115,5 +117,16 @@ conceptUl.addEventListener('click', (e)=> {
 
     if (e.target.id === 'functions') {
         functionPage();
+    }
+})
+
+main.addEventListener('click', (e) => {
+    const const1 = document.getElementById('const1')
+    if (e.target.id === 'const1Btn') {
+        if (const1.value === 'const') {
+            console.log('THAT IS CORRECT')
+        } else {
+            console.log('THAT IS INCORRECT')
+        }
     }
 })
