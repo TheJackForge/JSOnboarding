@@ -45,7 +45,21 @@ function assignVariables() {
     assignVariableDiv.innerHTML = `
     <h1 class="text-4xl">Assigning Variables</h1>
     <h4 class="mt-4 mb-4 text-base">These are your children...</h4>
-    <div class="border-b-2 mb-5">
+    <div class="border-b-2 mb-5"></div>
+    <p class="mb-5">Declaring a variable is how we can access certain areas of the code. Without a variable, certain areas will become inaccessible to our insertion teams leaving the corporation vulnerable.</p>
+    <p class="mb-5">As of writing this, you have 2 available ways to declare a variable. They are:</p>
+    
+    <p class="border-b border-r border-pink-500 inline-block pr-4">METHOD CONST</li>
+    
+    <p class="mb-5">Method CONST defines a constant variable. This cannot under any circumstances be changed. Doing so will incur an error and could lead to destabilization</p>
+
+    <p class="border-b border-r border-pink-500 inline-block pr-4">METHOD LET</p>
+    
+    <p class="mb-5">Method LET allows more flexibility when declaring variable. It can be changed and augmented as the operator/developer sees fit. Be aware that by allowing change, it can lead to your code becoming unstable</p>
+    </ul>
+
+
+
     `
     main.appendChild(assignVariableDiv)
 }
