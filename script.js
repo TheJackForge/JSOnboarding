@@ -8,6 +8,10 @@ const conceptArray = [
         'id': 'assign-variables' 
     },
     {
+        'title': 'Selectors',
+        'id': 'selectors'
+    },
+    {
         'title': 'Event Listeners',
         'id': 'event-listeners'
     },
@@ -41,7 +45,7 @@ function conceptList() {
 function assignVariables() {
     main.innerHTML = '';
     const assignVariableDiv = document.createElement('div')
-    assignVariableDiv.className = ""
+    assignVariableDiv.className = "mb-20"
     assignVariableDiv.innerHTML = `
     <h1 class="text-4xl">Declaring Variables</h1>
     <h4 class="mt-4 mb-4 text-base">These are your children...</h4>
@@ -70,11 +74,13 @@ function assignVariables() {
     </div>
 
     <small>Please answer the following questions</small>
-    <p>1. If you are tasked with operating a top secret mission, and are forbidden from bringing in any extra operatives. You would need to use the <input id="const1" class="bg-black text-aqua mr-1 ml-1 items-center h-5 w-20"></input>declaration. </p>
-    <button id="const1Btn" class="text-aqua text-xs items-center bg-black pr-1 pl-1 mt-2 mb-4">
-    PROCESS ANSWER</button>  
+    <p>1. If you are tasked with operating a top secret mission, and are forbidden from bringing in any extra operatives. You would need to use the <input id="const1" class="bg-black text-aqua mr-1 ml-1 h-5 w-20 text-center"></input>declaration. </p>
+    <button id="const1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+    PROCESS ANSWER</button><div id="const1Result" class=""></div>
 
-    <p class="mb-5">2. While monitoring your teams vital stats, you notice that their health begins to deteriorate. You feel that sending in a Stim-Operative would be beneficial to the team. To increase the number of members on the team, you would need to use the <input></input> declaration.</p>
+    <p>2. While monitoring your teams vital stats, you notice that their health begins to deteriorate. You feel that sending in a Stim-Operative would be beneficial to the team. To increase the number of members on the team, you would need to use the <input id="const2" class="bg-black text-aqua mr-1 ml-1 h-5 w-20 text-center"></input> declaration.</p>
+    <button id="const2Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+    PROCESS ANSWER</button><div id="const2Result"></div>
     `
     main.appendChild(assignVariableDiv)
 }
@@ -120,13 +126,34 @@ conceptUl.addEventListener('click', (e)=> {
     }
 })
 
+// Declaring Variables Questions
+
 main.addEventListener('click', (e) => {
     const const1 = document.getElementById('const1')
+    const const1Result = document.getElementById('const1Result')
     if (e.target.id === 'const1Btn') {
+        // const const1Btn = document.getElementById('const1Btn')
         if (const1.value === 'const') {
-            console.log('THAT IS CORRECT')
+            const1Result.innerHTML = `<p>CORRECT</p>`
+            const1Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
         } else {
-            console.log('THAT IS INCORRECT')
+            const1Result.innerHTML = `<p>INCORRECT</p>`
+            const1Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
+        }
+    }
+})
+
+main.addEventListener('click', (e) => {
+    const const2 = document.getElementById('const2')
+    const const2Result = document.getElementById('const2Result')
+    if (e.target.id === 'const2Btn') {
+        // const const1Btn = document.getElementById('const1Btn')
+        if (const2.value === 'let') {
+            const2Result.innerHTML = `<p>CORRECT</p>`
+            const2Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
+        } else {
+            const2Result.innerHTML = `<p>INCORRECT</p>`
+            const2Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
         }
     }
 })
