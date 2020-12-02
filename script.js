@@ -85,7 +85,7 @@ const conceptArray = [
         <p>EMPLOYEE CLASS === CEO STATUS // REDACTED (ID NUMBER = &lt;div id="ceoStatus"&gt;)</p>
         <p>RANDALL FROST (Last Known Location) CLOUD ARRAY: &lt;img href="/surveillance/location/1114032.png" class="concourse"&gt;
         </div>
-    
+
         <small>Please answer the following questions</small>
         <p>1. What phrase is the CEO ID linked to? <input id="obtainingElements1" class="bg-black text-aqua mr-1 ml-1 h-5 w-20 text-center"></input></p>
         <button id="obtainingElements1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
@@ -95,32 +95,30 @@ const conceptArray = [
         <button id="obtainingElements2Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
         PROCESS ANSWER</button><div id="obtainingElements2Result"></div>
 
-        <p>3. A surveillance photo of the CEO's last known location is available but we can only access with the <span class="text-purple-500">class</span> selector. To do this we would need to use the <input id="obtainingElements1" class="bg-black text-aqua mr-1 ml-1 h-5 w-30 text-center"></input> method.
-        </p>
-        <button id="obtainingElements1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
-        PROCESS ANSWER</button><div id="obtainingElements1Result" class=""></div>
+        <p>3. A surveillance photo of the CEO's last known location is available but we can only access with the <span class="text-purple-500">class</span> selector. To do this we would need to use the <input id="obtainingElements3" class="bg-black text-aqua mr-1 ml-1 h-5 w-25 text-center"></input> method.</p>
+        <button id="obtainingElements3Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+        PROCESS ANSWER</button><div id="obtainingElements3Result" class=""></div>
 
-        <p>3. A surveillance photo of the CEO's last known location is available but we can only access with the <span class="text-purple-500">class</span> selector. To do this we would need to use the <input id="obtainingElements1" class="bg-black text-aqua mr-1 ml-1 h-5 w-30 text-center"></input> method.
-        </p>
-        <button id="obtainingElements1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
-        PROCESS ANSWER</button><div id="obtainingElements1Result" class=""></div>
+        <p>4. What would you have to type into the console to obtain the information linked to the <span class="text-purple-500">class</span>? Note: When you are using classes, you must place a decimal point ("." / dot) before the className.   <input id="obtainingElements4" class="bg-black text-aqua mr-1 ml-1 h-5 w-20 text-center"></input></p>
+        <button id="obtainingElements4Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+        PROCESS ANSWER</button><div id="obtainingElements4Result" class=""></div>
         `
     },
     {
         'title': 'Event Listeners',
         'id': 'event-listeners',
-        'data': 'CLASSIFIED AREA'
+        'data': 'AREA NOT YET COMPLETE // PLEASE CONTACT SYSTEM ADMIN'
     },
-    {
-        'title': 'Functions',
-        'id': 'functions',
-        'data': 'CLASSIFIED AREA'
-    },
-    {
-        'title': 'loops',
-        'id': 'loops',
-        'data': 'CLASSIFIED AREA'
-    }
+    // {
+    //     'title': 'Functions',
+    //     'id': 'functions',
+    //     'data': 'AREA NOT YET COMPLETE // PLEASE CONTACT SYSTEM ADMIN'
+    // },
+    // {
+    //     'title': 'Loops',
+    //     'id': 'loops',
+    //     'data': 'AREA NOT YET COMPLETE // PLEASE CONTACT SYSTEM ADMIN'
+    // }
 ];
 
 function conceptOpen() {
@@ -131,7 +129,6 @@ function conceptList() {
         if (conceptUl.innerText === '') {
         conceptArray.forEach( (concept, index) => {
         const li = document.createElement('li');
-        console.log(index)
         li.className = ('conceptBtn border mr-4 ml-8 mb-1 pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 hover:mr-2 transform hover:pr-6 duration-500')
         li.innerHTML = `
             <div id="${concept.id}" data-index='${index}'>${concept.title}</div>
@@ -157,7 +154,6 @@ conceptsBtn.addEventListener('click', conceptOpen)
 conceptUl.addEventListener('click', (e)=> {
     
     if (e.target.classList.contains = 'conceptBtn') {
-        console.log(e.target)
         const index = e.target.dataset.index
         populateDom(index);
     }
@@ -202,7 +198,6 @@ main.addEventListener('click', (e) => {
     const obtainingElements1Result = document.getElementById('obtainingElements1Result')
     const obtainingElements2Redacted = document.getElementById('redacted2')
     if (e.target.id === 'obtainingElements1Btn') {
-        // const const1Btn = document.getElementById('const1Btn')
         if (obtainingElements1.value === 'ceoStatus') {
             obtainingElements1Result.innerHTML = `<p>CORRECT</p>`
             obtainingElements1Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
@@ -223,13 +218,40 @@ main.addEventListener('click', (e) => {
     const obtainingElements1 = document.getElementById('obtainingElements2')
     const obtainingElements1Result = document.getElementById('obtainingElements2Result')
     if (e.target.id === 'obtainingElements2Btn') {
-        // const const1Btn = document.getElementById('const1Btn')
         if (obtainingElements1.value === 'getElementById') {
             obtainingElements1Result.innerHTML = `<p>CORRECT</p>`
             obtainingElements1Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
         } else {
             obtainingElements1Result.innerHTML = `<p>INCORRECT</p>`
             obtainingElements1Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
+        }
+    }
+})
+
+main.addEventListener('click', (e) => {
+    const obtainingElements3 = document.getElementById('obtainingElements3')
+    const obtainingElements3Result = document.getElementById('obtainingElements3Result')
+    if (e.target.id === 'obtainingElements3Btn') {
+        if (obtainingElements3.value === 'querySelector') {
+            obtainingElements3Result.innerHTML = `<p>CORRECT</p>`
+            obtainingElements3Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
+        } else {
+            obtainingElements3Result.innerHTML = `<p>INCORRECT</p>`
+            obtainingElements3Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
+        }
+    }
+})
+
+main.addEventListener('click', (e) => {
+    const obtainingElements4 = document.getElementById('obtainingElements4')
+    const obtainingElements4Result = document.getElementById('obtainingElements4Result')
+    if (e.target.id === 'obtainingElements4Btn') {
+        if (obtainingElements4.value === '.concourse') {
+            obtainingElements4Result.innerHTML = `<p>CORRECT</p>`
+            obtainingElements4Result.className = 'text-lime bg-black pl-10 pr-2 inline-block text-xs'
+        } else {
+            obtainingElements4Result.innerHTML = `<p>INCORRECT</p>`
+            obtainingElements4Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
         }
     }
 })
