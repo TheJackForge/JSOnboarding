@@ -4,6 +4,13 @@ const main = document.getElementById('main')
 
 const conceptArray = [
     {
+        'title': 'Operator Tools',
+        'id': 'operator-tools',
+        'data': `<div id="consoleDiv" class="mb-20">
+        <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Operator Tools</h1>
+        <h4 class="mt-4 mb-4 text-base">You have been given the keys to the kingdom...</h4>`
+    },
+    {
         'title': 'Declaring Variables',
         'id': 'assign-variables',
         'data': `<h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Declaring Variables</h1>
@@ -105,9 +112,11 @@ const conceptArray = [
         `
     },
     {
-        'title': 'Event Listeners',
+        'title': 'Event Listeners // Click',
         'id': 'event-listeners',
-        'data': `<h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Event Listeners</h1>
+        'data': `
+        <div id="eventListenerClick" class="mb-20">
+        <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Event Listeners</h1>
         <h4 class="mt-4 mb-4 text-base">We are always listening...</h4>
         <div class="border-b-2 mb-5"></div>
         <p class="mb-5">As an operator, you will need to become proficient at planting listening devices. We here at the JS/Onboarding like to refer to these devices as <span class="text-purple-500">eventListeners</span>. These devices are attached to the base of an element and serve as a doorway, giving us access to certain areas of the code to change things as we see fit.</p>
@@ -134,14 +143,17 @@ const conceptArray = [
         <li class="mb-5"><span class="text-yellow-500">4//</span> This is the code that will be activated once the button is clicked. You can make it whatever you want. Make it whatever is necessary to ensure mission success. In this case we have called the function that will activate the alarm.
         </ul>
 
-        <p class="mb-5">Here is what the final product will look like:</p>
-        <div class="flex">
+        <p class="mb-5">Here is what the final product will look like (click to activate alarm):</p>
+        <div class="flex mb-5">
         <div>
         <button id="access-button" class="p-2 bg-red-800 text-white mx-auto border border-red-800">EMERGENCY</button>
         </div>
         <div id="security-forces" class="p-2 bg-black text-red-800 border border-red-800 invisible">
         <p>SECURITY FORCES HAVE BEEN DISPATCHED</p>
         </div>
+        </div>
+
+        <p>While "<span class="text-aqua">click</span>" is the most commonly used <span class="text-purple-500">eventListener</span>, many others exist. We will cover more of them as you get further along in your training.</p>
         </div>
         `
 
@@ -172,6 +184,8 @@ function conceptList() {
         `
         conceptUl.appendChild(li);
     })
+    } else {
+        conceptUl.innerHTML = ''
     }
 }
 
@@ -189,7 +203,6 @@ function populateDom(index) {
 conceptsBtn.addEventListener('click', conceptOpen)
 
 conceptUl.addEventListener('click', (e)=> {
-    
     if (e.target.classList.contains = 'conceptBtn') {
         const index = e.target.dataset.index
         populateDom(index);
@@ -292,6 +305,8 @@ main.addEventListener('click', (e) => {
         }
     }
 })
+
+// Add EventListener Click Questions
 
 main.addEventListener('click', (e) => {
     if (e.target.id === 'access-button') {
