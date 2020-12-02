@@ -78,11 +78,12 @@ const conceptArray = [
         <p>Simulation Exercises</p>
     
         <div class="bg-black text-s pl-2 pt-2 pb-2 mb-5">
-        <p class="mb-2">On a mission you come across a tablet that you must break into. In order to do this you need to pull out several elements to make changes to. You are presented with the following code when you penetrate the initial layer of the firewall:</p> 
+        <p class="mb-2">On a mission you come across a system that you must break into. In order to do this you need to pull out several elements to augment. You are presented with the following code when you penetrate the initial layer of the firewall:</p> 
         <p>Device INITIATED AT 00:29 // Alarms have not been triggered</p>
         <p>Results have come back NEGATIVE</p>
         <p>KEY Elements are in Resting State // P4623</p>
-        <p>EMPLOYEE CLASS === CEO STATUS // REDACTED (ID NUMBER = &lt;div id="ceoStatus"&gt;)
+        <p>EMPLOYEE CLASS === CEO STATUS // REDACTED (ID NUMBER = &lt;div id="ceoStatus"&gt;)</p>
+        <p>RANDALL FROST (Last Known Location) CLOUD ARRAY: &lt;img href="/surveillance/location/1114032.png" class="concourse"&gt;
         </div>
     
         <small>Please answer the following questions</small>
@@ -93,6 +94,16 @@ const conceptArray = [
         <p>2. To obtain <span id="redacted2" class="bg-black text-red-500">REDACTED</span> ID we would need to use the <input id="obtainingElements2" class="bg-black text-aqua mr-1 ml-1 h-5 w-30 text-center"></input> method.</p>
         <button id="obtainingElements2Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
         PROCESS ANSWER</button><div id="obtainingElements2Result"></div>
+
+        <p>3. A surveillance photo of the CEO's last known location is available but we can only access with the <span class="text-purple-500">class</span> selector. To do this we would need to use the <input id="obtainingElements1" class="bg-black text-aqua mr-1 ml-1 h-5 w-30 text-center"></input> method.
+        </p>
+        <button id="obtainingElements1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+        PROCESS ANSWER</button><div id="obtainingElements1Result" class=""></div>
+
+        <p>3. A surveillance photo of the CEO's last known location is available but we can only access with the <span class="text-purple-500">class</span> selector. To do this we would need to use the <input id="obtainingElements1" class="bg-black text-aqua mr-1 ml-1 h-5 w-30 text-center"></input> method.
+        </p>
+        <button id="obtainingElements1Btn" class="text-aqua text-xs items-center bg-black pl-1 pr-1 mt-2 mb-4 z-10 focus:outline-none">
+        PROCESS ANSWER</button><div id="obtainingElements1Result" class=""></div>
         `
     },
     {
