@@ -123,19 +123,27 @@ const conceptArray = [
         <p class="mb-5"><span class="text-yellow-500">2//</span> const accessBtn = document.getElementById('access-button')</p>
 
         <p><span class="text-yellow-500">3//</span> accessBtn.<span class="text-lime">addEventListener</span>('<span class="text-aqua">click</span>', <span class="text-color-purple">( ) =></span> {</p>
-            <p><span class="text-yellow-500">4//</span> console.log('ALARM ACTIVATED - SEND SECURITY FORCES')</p>
+            <p><span class="text-yellow-500">4//</span> activateAlarm( );</p>
         <p>})</p>
         </div>
 
-        <p></p>
         <ul>
         <li class="mb-5"><span class="text-yellow-500">1// </span>Identify the element in the HTML sector that you would like to attach the <span class="text-purple-500">eventListener</span> to. In this case it is a button that will send a call for SECURITY FORCES if it is <span class="text-aqua">clicked</span>.</li>
         <li class="mb-5"><span class="text-yellow-500">2//</span> In JavaScript, we use the id of the button ("access-button"), to create a variable. We have applied this to a const variable and called it accessBtn. This variable will give us access to implant the listening device.</li>
         <li class="mb-5"><span class="text-yellow-500">3//</span> Using the accessBtn we attach the listening device by adding the <span class="text-lime">addEventListener</span> prefix to it. We must then identify what we will be listening for, in this case, it is for someone to "<span class="text-aqua">click</span>" the button. Clicking the button will activate the function portal [Identified as <span class="text-purple-500">( ) =></span>] and activate the commands we have coded.</li>
-        <li class="mb-5"><span class="text-yellow-500">4//</span> This is the code that will be activated once the button is clicked. You can make it whatever you want. Make it whatever is necessary to ensure mission success. In this case we have activated the DIV sector that will activate the alarm to call for SECURITY FORCES.
+        <li class="mb-5"><span class="text-yellow-500">4//</span> This is the code that will be activated once the button is clicked. You can make it whatever you want. Make it whatever is necessary to ensure mission success. In this case we have called the function that will activate the alarm.
         </ul>
+
+        <p class="mb-5">Here is what the final product will look like:</p>
+        <div class="flex">
+        <div>
+        <button id="access-button" class="p-2 bg-red-800 text-white mx-auto border border-red-800">EMERGENCY</button>
+        </div>
+        <div id="security-forces" class="p-2 bg-black text-red-800 border border-red-800 invisible">
+        <p>SECURITY FORCES HAVE BEEN DISPATCHED</p>
+        </div>
+        </div>
         `
-        
 
     },
     // {
@@ -282,5 +290,13 @@ main.addEventListener('click', (e) => {
             obtainingElements4Result.innerHTML = `<p>INCORRECT</p>`
             obtainingElements4Result.className = 'text-red-500 bg-black pl-10 pr-2 inline-block text-xs'
         }
+    }
+})
+
+main.addEventListener('click', (e) => {
+    if (e.target.id === 'access-button') {
+        const securityForces = document.getElementById('security-forces')
+        securityForces.classList.remove('invisible')
+        console.log(e.target)
     }
 })
