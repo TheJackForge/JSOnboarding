@@ -6,7 +6,7 @@ const conceptArray = [
     {
         'title': 'Declaring Variables',
         'id': 'assign-variables',
-        'data': `<h1 class="text-4xl">Declaring Variables</h1>
+        'data': `<h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Declaring Variables</h1>
         <h4 class="mt-4 mb-4 text-base">These are your children...</h4>
         <div class="border-b-2 mb-5"></div>
         <p class="mb-5">Declaring a variable is how we can access certain areas of the code. Without a variable, certain areas will become inaccessible to our insertion teams.</p>
@@ -46,7 +46,7 @@ const conceptArray = [
         'title': 'Obtaining Elements',
         'id': 'obtainingElements',
         'data': `
-        <h1 class="text-4xl">Obtaining Elements</h1>
+        <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Obtaining Elements</h1>
         <h4 class="mt-4 mb-4 text-base">Sometimes you just need to take the things the corporation needs...</h4>
         <div class="border-b-2 mb-5"></div>
         <p class="mb-5">drone euro-pop render-farm garage DIY nodality augmented reality. modem Shibuya office rifle rebar convenience store sensory. pre- render-farm hacker human dome plastic katana. into papier-mache BASE jump modem math- neural 8-bit. free-market hacker refrigerator warehouse convenience store euro-pop j-pop. savant bicycle fluidity rifle range-rover narrative sprawl. receding neural receding ablative drone tattoo savant. drone stimulate kanji post- augmented reality pre- Shibuya. faded vinyl rain range-rover neon computer drone.</p>
@@ -107,7 +107,36 @@ const conceptArray = [
     {
         'title': 'Event Listeners',
         'id': 'event-listeners',
-        'data': 'AREA NOT YET COMPLETE // PLEASE CONTACT SYSTEM ADMIN'
+        'data': `<h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Event Listeners</h1>
+        <h4 class="mt-4 mb-4 text-base">We are always listening...</h4>
+        <div class="border-b-2 mb-5"></div>
+        <p class="mb-5">As an operator, you will need to become proficient at planting listening devices. We here at the JS/Onboarding like to refer to these devices as <span class="text-purple-500">eventListeners</span>. These devices are attached to the base of an element and serve as a doorway, giving us access to certain areas of the code to change things as we see fit.</p>
+        
+        <small>The following is an example of an ACTIVE <span class="text-purple-500">eventListener</span> after installation</small>
+
+        <div class="bg-black mb-5 pl-2">
+        <p class="text-aqua">// IN HTML //</p>
+        <p class="mb-5"><span class="text-yellow-500">1//</span> &lt;button id="access-button"&gt;ACCESS&lt;/button&gt;</p>
+
+        <p class="text-aqua">// IN JAVASCRIPT //</p>
+
+        <p class="mb-5"><span class="text-yellow-500">2//</span> const accessBtn = document.getElementById('access-button')</p>
+
+        <p><span class="text-yellow-500">3//</span> accessBtn.<span class="text-lime">addEventListener</span>('<span class="text-aqua">click</span>', <span class="text-color-purple">( ) =></span> {</p>
+            <p><span class="text-yellow-500">4//</span> console.log('ALARM ACTIVATED - SEND SECURITY FORCES')</p>
+        <p>})</p>
+        </div>
+
+        <p></p>
+        <ul>
+        <li class="mb-5"><span class="text-yellow-500">1// </span>Identify the element in the HTML sector that you would like to attach the <span class="text-purple-500">eventListener</span> to. In this case it is a button that will send a call for SECURITY FORCES if it is <span class="text-aqua">clicked</span>.</li>
+        <li class="mb-5"><span class="text-yellow-500">2//</span> In JavaScript, we use the id of the button ("access-button"), to create a variable. We have applied this to a const variable and called it accessBtn. This variable will give us access to implant the listening device.</li>
+        <li class="mb-5"><span class="text-yellow-500">3//</span> Using the accessBtn we attach the listening device by adding the <span class="text-lime">addEventListener</span> prefix to it. We must then identify what we will be listening for, in this case, it is for someone to "<span class="text-aqua">click</span>" the button. Clicking the button will activate the function portal [Identified as <span class="text-purple-500">( ) =></span>] and activate the commands we have coded.</li>
+        <li class="mb-5"><span class="text-yellow-500">4//</span> This is the code that will be activated once the button is clicked. You can make it whatever you want. Make it whatever is necessary to ensure mission success. In this case we have activated the DIV sector that will activate the alarm to call for SECURITY FORCES.
+        </ul>
+        `
+        
+
     },
     // {
     //     'title': 'Functions',
