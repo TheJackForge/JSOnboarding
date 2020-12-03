@@ -1,29 +1,39 @@
 const conceptsBtn = document.getElementById('concepts-btn')
 const conceptUl = document.getElementById('concept-list')
 const main = document.getElementById('main')
+const nav = document.getElementById('nav')
 
 const conceptArray = [
     {
         'title': 'Operator Tools',
         'id': 'operator-tools',
         'data': `
-        <div id="consoleDiv" class="mb-20">
+        <div id="console-div" class="mb-20">
         <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Operator Tools</h1>
         <h4 class="mt-4 mb-4 text-base">You have been given the keys to the kingdom...</h4>
         <div class="border-b-2 mb-5"></div>
         <p class="mb-5">As a new operator, you have been given access to what many of us at the corporation like to refer to as "Operator Tools." (NOTE: If your HUD Monitor is from before the war, this area may also be called "Developer Tools). This section of your HUD will allow you to access sections of the NeuralNET that is not available to the general public. In this section you will be able to view the inner workings of the NET, the HTML Sector, the CSS/Class Arc, and most importantly, the CONSOLE.</p>
-        
-        <p class="mb-5">The CONSOLE is where you will be able to run diagnostics on your hacks to ensure that they are functioning correctly. The initial and most primitive way of doing this is by using the console.log( ) method. Others exist but this is the one most new operators start with.</p>
 
         <small>To access the console in CHROME//BROWSER :</small>
-        <div class="mb-5 bg-black pl-1">
-            <p><span class="text-aqua">Apple</span> class HUD: <span class="text-lime">command + option + j</span></p>
-            <p><span class="text-aqua">Windows/Linux/Chromebook</span> class HUD: <span class="text-lime">control + shift + j</span></p>
+        <div class="mb-5 bg-black">
+            <p><span class="text-aqua">MAC</span> class HUD: <span class="text-lime">COMMAND+OPTION+C</span></p>
+            <p><span class="text-aqua">WINDOWS/LINUX/CHROMBOOK</span> class HUD: <span class="text-lime">CONTROL+SHIFT+C</span></p>
         </div>
         <p class="mb-5"></p>
         
-        <small>The following is an example of using console.log to send the string 'Initiate Hack' to the console.</small>
-        <p class="mb-5 bg-black">console.log('Initiate Hack');</p>`
+        <p class="mb-5">The CONSOLE is where you will be able to run diagnostics on your hacks to ensure that they are functioning correctly. The initial and most primitive way of doing this is by using the console.log( ) method. Others exist but this is the one most new operators start with.</p>
+
+       <small>The following is an example of using console.log to send the string 'Initiate Hack' to the console.</small>
+        <p class="mb-5 bg-black">console.log('HACK COMPLETE');</p>
+        <small>Open the console with one of the above commands and click the button</small>
+        <div id="hackMini" class="flex items-center">
+        <div id="hack-1"><button id="console-hack" class="mt-1 p-1 bg-purple-500 text-black border border-black">HACK</button></div>
+        <div id="hack-2" class="relative bg-black ml-5 w-xl">
+            <div id="hack-2a" class="absolute">
+            <span>.................</span>
+            </div>
+        </div>
+        </div>`
     },
     {
         'title': 'Declaring Variables',
@@ -193,9 +203,11 @@ function conceptList() {
         if (conceptUl.innerText === '') {
         conceptArray.forEach( (concept, index) => {
         const li = document.createElement('li');
-        li.className = ('conceptBtn border mr-4 ml-8 mb-1 pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 hover:mr-2 transform hover:pr-6 duration-500')
+        li.className = ('conceptBtn border pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 transform hover:pr-6 duration-500')
+        li.id = concept.id
+        li.dataset.index = index
         li.innerHTML = `
-            <div id="${concept.id}" data-index='${index}'>${concept.title}</div>
+            ${concept.title}
         `
         conceptUl.appendChild(li);
     })
@@ -218,7 +230,7 @@ function populateDom(index) {
 conceptsBtn.addEventListener('click', conceptOpen)
 
 conceptUl.addEventListener('click', (e)=> {
-    if (e.target.classList.contains = 'conceptBtn') {
+    if (e.target.tagName = 'li') {
         const index = e.target.dataset.index
         populateDom(index);
     }
@@ -255,6 +267,22 @@ main.addEventListener('click', (e) => {
         }
     }
 })
+
+// Developer Tools Questions
+main.addEventListener('click', (e) => {
+    const consoleHack = document.getElementById('console-hack')
+    const hack2 = document.getElementById('hack-2')
+    if (e.target === consoleHack) {
+        hack2.innerHTML = `<p class="text-aqua">INITIATED</p>`
+        consoleProgress();
+        console.log('HACK COMPLETE')
+    }
+})
+
+function consoleProgress() {
+    const hack2 = document.getElementById('hack-2')
+    
+}
 
 // Obtaining DOM Elements Questions
 
@@ -330,3 +358,4 @@ main.addEventListener('click', (e) => {
         console.log(e.target)
     }
 })
+
