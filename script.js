@@ -6,9 +6,24 @@ const conceptArray = [
     {
         'title': 'Operator Tools',
         'id': 'operator-tools',
-        'data': `<div id="consoleDiv" class="mb-20">
+        'data': `
+        <div id="consoleDiv" class="mb-20">
         <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Operator Tools</h1>
-        <h4 class="mt-4 mb-4 text-base">You have been given the keys to the kingdom...</h4>`
+        <h4 class="mt-4 mb-4 text-base">You have been given the keys to the kingdom...</h4>
+        <div class="border-b-2 mb-5"></div>
+        <p class="mb-5">As a new operator, you have been given access to what many of us at the corporation like to refer to as "Operator Tools." (NOTE: If your HUD Monitor is from before the war, this area may also be called "Developer Tools). This section of your HUD will allow you to access sections of the NeuralNET that is not available to the general public. In this section you will be able to view the inner workings of the NET, the HTML Sector, the CSS/Class Arc, and most importantly, the CONSOLE.</p>
+        
+        <p class="mb-5">The CONSOLE is where you will be able to run diagnostics on your hacks to ensure that they are functioning correctly. The initial and most primitive way of doing this is by using the console.log( ) method. Others exist but this is the one most new operators start with.</p>
+
+        <small>To access the console in CHROME//BROWSER :</small>
+        <div class="mb-5 bg-black pl-1">
+            <p><span class="text-aqua">Apple</span> class HUD: <span class="text-lime">command + option + j</span></p>
+            <p><span class="text-aqua">Windows/Linux/Chromebook</span> class HUD: <span class="text-lime">control + shift + j</span></p>
+        </div>
+        <p class="mb-5"></p>
+        
+        <small>The following is an example of using console.log to send the string 'Initiate Hack' to the console.</small>
+        <p class="mb-5 bg-black">console.log('Initiate Hack');</p>`
     },
     {
         'title': 'Declaring Variables',
