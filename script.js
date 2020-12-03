@@ -26,11 +26,10 @@ const conceptArray = [
        <small>The following is an example of using console.log to send the string 'Initiate Hack' to the console.</small>
         <p class="mb-5 bg-black">console.log('HACK COMPLETE');</p>
         <small>Open the console with one of the above commands and click the button</small>
-        <div id="hackMini" class="flex items-center">
-        <div id="hack-1"><button id="console-hack" class="mt-1 p-1 bg-purple-500 text-black border border-black">HACK</button></div>
-        <div id="hack-2" class="relative bg-black ml-5 w-xl">
-            <div id="hack-2a" class="absolute">
-            <span>.................</span>
+        <div id="hackMini" class="flex items-center mt-2">
+        <div id="hack-1"><button id="console-hack" class="p-1 bg-purple-500 text-black border border-black">HACK</button></div>
+        <div id="hack-2" class="inline-block relative bg-black ml-5 h-4 max-w-xs w-1/5 invisible">
+            <div id="hack-2a" class="bg-aqua h-4 absolute text-center text-black text-xs items-center">
             </div>
         </div>
         </div>`
@@ -44,13 +43,13 @@ const conceptArray = [
         <p class="mb-5">Declaring a variable is how we can access certain areas of the code. Without a variable, certain areas will become inaccessible to our insertion teams.</p>
         <p class="mb-5">As of writing this, you have 2 available ways to declare a variable. They are:</p>
         
-        <p class="border-b border-r border-pink-500 inline-block pr-4">METHOD const</li>
+        <p class="border-b border-r border-pink-500 inline-block pr-4">KEYWORD const</li>
         
-        <p class="mb-5">Method <span class="text-purple-500">const</span> defines a constant variable. This cannot under any circumstances be changed. Doing so will incur an error and could lead to destabilization</p>
+        <p class="mb-5">Keyword <span class="text-purple-500">const</span> defines a constant variable. This cannot under any circumstances be changed. Doing so will incur an error and could lead to destabilization</p>
     
-        <p class="border-b border-r border-pink-500 inline-block pr-4">METHOD let</p>
+        <p class="border-b border-r border-pink-500 inline-block pr-4">KEYWORD let</p>
     
-        <p class="mb-5">Method <span class="text-purple-500">let</span> allows more flexibility when declaring variable. It can be changed and augmented as the operator/developer sees fit. Be aware that by allowing change, it can lead to your code inadvertently becoming unstable</p>
+        <p class="mb-5">Keyword <span class="text-purple-500">let</span> allows more flexibility when declaring variable. It can be changed and augmented as the operator/developer sees fit. Be aware that by allowing change, it can lead to your code inadvertently becoming unstable</p>
         
         <small>Example of Declaring Variables</small>
     
@@ -271,17 +270,30 @@ main.addEventListener('click', (e) => {
 // Developer Tools Questions
 main.addEventListener('click', (e) => {
     const consoleHack = document.getElementById('console-hack')
-    const hack2 = document.getElementById('hack-2')
     if (e.target === consoleHack) {
-        hack2.innerHTML = `<p class="text-aqua">INITIATED</p>`
-        consoleProgress();
-        console.log('HACK COMPLETE')
+        consoleProgress(); 
     }
 })
 
 function consoleProgress() {
     const hack2 = document.getElementById('hack-2')
-    
+    const hack2a = document.getElementById('hack-2a')
+    hack2.classList.remove('invisible')
+    let width = 0;
+    let progress = setInterval(frame, 60);
+        function frame() {
+            if (width === 100) {
+                clearInterval(progress);
+            } else {
+                width++
+                hack2a.style.width = width + '%'
+                hack2a.innerText = `${width}`
+                if (width === 100) {
+                    hack2a.innerText = `HACK COMPLETE`
+                    console.log('HACK COMPLETE')
+                }
+            }
+        }
 }
 
 // Obtaining DOM Elements Questions
