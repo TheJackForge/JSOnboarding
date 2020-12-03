@@ -1,5 +1,7 @@
 const conceptsBtn = document.getElementById('concepts-btn')
 const conceptUl = document.getElementById('concept-list')
+const projectsBtn = document.getElementById('projects-button')
+const projectsUl = document.getElementById('project-list')
 const main = document.getElementById('main')
 const nav = document.getElementById('nav')
 
@@ -16,8 +18,8 @@ const conceptArray = [
 
         <small>To access the console in CHROME//BROWSER :</small>
         <div class="mb-5 bg-black">
-            <p><span class="text-aqua">MAC</span> class HUD: <span class="text-lime">COMMAND+OPTION+C</span></p>
-            <p><span class="text-aqua">WINDOWS/LINUX/CHROMBOOK</span> class HUD: <span class="text-lime">CONTROL+SHIFT+C</span></p>
+            <p><span class="text-aqua">Apple</span> class HUD: <span class="text-lime">COMMAND+OPTION+C</span></p>
+            <p><span class="text-aqua">Windows/Linux</span> class HUD: <span class="text-lime">CONTROL+SHIFT+C</span></p>
         </div>
         <p class="mb-5"></p>
         
@@ -26,13 +28,14 @@ const conceptArray = [
        <small>The following is an example of using console.log to send the string 'Initiate Hack' to the console.</small>
         <p class="mb-5 bg-black">console.log('HACK COMPLETE');</p>
         <small>Open the console with one of the above commands and click the button</small>
-        <div id="hackMini" class="flex items-center mt-2">
+        <div id="hackMini" class="flex items-center mt-2 bg-black justify-center pt-5 pb-5 max-w-xl mx-auto">
         <div id="hack-1"><button id="console-hack" class="p-1 bg-purple-500 text-black border border-black">HACK</button></div>
-        <div id="hack-2" class="inline-block relative bg-black ml-5 h-4 max-w-xs w-1/5 invisible">
+        <div id="hack-2" class="inline-block relative bg-red-600 ml-5 h-4 max-w-lg w-1/2 invisible">
             <div id="hack-2a" class="bg-aqua h-4 absolute text-center text-black text-xs items-center">
             </div>
         </div>
-        </div>`
+        </div>
+        <small>Once the hack is 100% complete, you will be able to open the console and view the "HACK COMPLETE" console.log message.</small>`
     },
     {
         'title': 'Declaring Variables',
@@ -173,7 +176,7 @@ const conceptArray = [
         <button id="access-button" class="p-2 bg-red-800 text-white mx-auto border border-red-800">EMERGENCY</button>
         </div>
         <div id="security-forces" class="p-2 bg-black text-red-800 border border-red-800 invisible">
-        <p>SECURITY FORCES HAVE BEEN DISPATCHED</p>
+        <small>SECURITY DISPATCHED</small>
         </div>
         </div>
 
@@ -194,6 +197,14 @@ const conceptArray = [
     // }
 ];
 
+const projectsArray = [
+    {
+        'title': 'Progress Bar',
+        'id': 'progressBar',
+        'data': `ACCESS DENIED`
+    }
+];
+
 function conceptOpen() {
     conceptList();
 }
@@ -202,20 +213,46 @@ function conceptList() {
         if (conceptUl.innerText === '') {
         conceptArray.forEach( (concept, index) => {
         const li = document.createElement('li');
-        li.className = ('conceptBtn border pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 transform hover:pr-6 duration-500')
+        conceptUl.className = ('border-t border-b flex flex-col text-right mb-1 border-purple-600')
+        li.className = ('border border-purple-500 pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 transform hover:pr-6 duration-500')
         li.id = concept.id
         li.dataset.index = index
         li.innerHTML = `
             ${concept.title}
         `
+        projectsUl.innerHTML = ''
         conceptUl.appendChild(li);
     })
     } else {
         conceptUl.innerHTML = ''
+        conceptUl.className = ''
     }
 }
 
-function populateDom(index) {
+function projectsOpen() {
+    projectsList();
+    conceptUl.className = ''
+}
+
+function projectsList() {
+    if (projectsUl.innerText === '') {
+        projectsArray.forEach( (project, index) => {
+        const li = document.createElement('li');
+        li.className = ('border border-purple-500 pr-4 cursor-pointer transform hover:border-purple-500 hover:bg-purple-500 transform hover:pr-6 duration-500')
+        li.id = project.id
+        li.dataset.index = index
+        li.innerHTML = `
+            ${project.title}
+        `
+        conceptUl.innerHTML = ''
+        projectsUl.appendChild(li);
+    })
+    } else {
+        projectsUl.innerHTML = ''
+    }
+}
+
+function populateDomConcepts(index) {
     main.innerHTML = '';
     const operatorDiv = document.createElement('div')
     operatorDiv.className = "mb-20"
@@ -224,14 +261,32 @@ function populateDom(index) {
     main.appendChild(operatorDiv)
 }
 
-// Event Listeners
+function populateDomProjects(index) {
+    main.innerHTML = '';
+    const operatorDiv = document.createElement('div')
+    operatorDiv.className = "mb-20"
+    const operatorData = projectsArray[index].data
+    operatorDiv.innerHTML = operatorData;
+    main.appendChild(operatorDiv)
+}
+
+// Event Listeners for Navigation
 
 conceptsBtn.addEventListener('click', conceptOpen)
 
 conceptUl.addEventListener('click', (e)=> {
     if (e.target.tagName = 'li') {
         const index = e.target.dataset.index
-        populateDom(index);
+        populateDomConcepts(index);
+    }
+})
+
+projectsBtn.addEventListener('click', projectsOpen)
+
+projectsUl.addEventListener('click', (e) => {
+    if (e.target.tagName = 'li') {
+        const index = e.target.dataset.index
+        populateDomProjects(index)
     }
 })
 
@@ -289,7 +344,7 @@ function consoleProgress() {
                 hack2a.style.width = width + '%'
                 hack2a.innerText = `${width}`
                 if (width === 100) {
-                    hack2a.innerText = `HACK COMPLETE`
+                    hack2a.innerText = `COMPLETE`
                     console.log('HACK COMPLETE')
                 }
             }
