@@ -3,3 +3,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.progress-hack {
+    background-color: #EF4444;
+    width: 50%;
+    height: 14px;
+    position: relative;
+}
+
+.progress-hack-complete {
+    background-color: #84CC16;
+    height: 14px;
+    position: absolute;
+}
+
+.progress-initial-hack {
+    background-color: #000;
+    height: 40px;
+    width: 10px;
+    position: relative;
+}
+
+.progress-initial-hack-complete {
+    background-color: orange;
+    height: 5%;
+    width: 10px;
+    position: absolute;
+}
+
+.progress-connect-hack {
+    background-color: #000;
+    height: 2px;
+    width: 50px;
+}
+
+.progress-connect-hack-complete {
+    background-color: orange;
+    height: 2px;
+    width: 5%;
+}
+

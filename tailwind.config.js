@@ -17,8 +17,6 @@ module.exports = {
     extend: {
       margin: ['hover'],
       padding: ['hover'],
-      border: ['last'],
-      border: ['first']
     },
   },
   plugins: [],

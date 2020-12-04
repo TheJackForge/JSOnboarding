@@ -201,7 +201,31 @@ const projectsArray = [
     {
         'title': 'Progress Bar',
         'id': 'progressBar',
-        'data': `ACCESS DENIED`
+        'data': `
+        <div class="mb-20">
+            <div id="progress-bar-project" class="mb-20">
+                <h1 class="text-4xl pl-1 border-l-4 border-b border-pink-500 inline-block">Progress Bar // Initiate Hack</h1>
+                <h4 class="mt-4 mb-4 text-base">Progress means moving forward...</h4>
+                <div class="border-b-2 mb-5"></div>  
+                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet facilisis magna etiam tempor. Morbi tincidunt ornare massa eget egestas purus. Ridiculus mus mauris vitae ultricies leo. Volutpat sed cras ornare arcu. Volutpat diam ut venenatis tellus in. Aliquam etiam erat velit scelerisque in. Pellentesque massa placerat duis ultricies lacus sed turpis tincidunt. Non blandit massa enim nec dui. Tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <div id="progressTerminal" class="border h-20 flex items-center justify-end pr-5">
+                    <button class="mr-2 ml-5 pr-1 pl-1 bg-gray-900 text-xs">ESTABLISH CONNECTION</button>
+                    <div id="progressInitialHack" class="progress-initial-hack mr-4 flex flex-col justify-end">
+                        <div id="progressInitialHackComplete" class="progress-initial-hack-complete"></div>
+                    </div>
+
+                    <div id="progressConnectHack" class="progress-connect-hack">
+                        <div id="progressConnectHackComplete" class="progress-connect-hack-complete"></div>
+                    </div>
+
+                    <button class="pr-1 pl-1 bg-gray-900 mr-5 text-xs">INITIATE HACK</button>
+                    <div id="progressHack" class="progress-hack">
+                        <div id="progressHackComplete" class="progress-hack-complete"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+`
     }
 ];
 
