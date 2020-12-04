@@ -2,7 +2,6 @@
   "name": "learning-platform",
   "version": "1.0.0",
   "description": "A learning program.",
-  "main": "script.js",
   "scripts": {
     "build:css": "tailwindcss build src/styles.css -o public/styles.css"
   },
