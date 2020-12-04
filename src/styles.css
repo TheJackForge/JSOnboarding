@@ -4,6 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.progress-initial-hack {
+    background-color: #000;
+    height: 40px;
+    width: 14px;
+    position: relative;
+}
+
+.progress-initial-hack-complete {
+    background-color: orange;
+    position: absolute;
+    width: 14px;
+}
+
+.progress-connect-hack {
+    background-color: #000;
+    height: 2px;
+    width: 50px;
+    position: relative;
+}
+
+.progress-connect-hack-complete {
+    height: 2px;
+    position: absolute;
+}
+
 .progress-hack {
     background-color: #EF4444;
     width: 50%;
@@ -12,34 +38,9 @@
 }
 
 .progress-hack-complete {
-    background-color: #84CC16;
+    background-color: #7C3AED;
     height: 14px;
     position: absolute;
-}
-
-.progress-initial-hack {
-    background-color: #000;
-    height: 40px;
-    width: 10px;
-    position: relative;
-}
-
-.progress-initial-hack-complete {
-    background-color: orange;
-    height: 5%;
-    width: 10px;
-    position: absolute;
-}
-
-.progress-connect-hack {
-    background-color: #000;
-    height: 2px;
-    width: 50px;
-}
-
-.progress-connect-hack-complete {
-    background-color: orange;
-    height: 2px;
-    width: 5%;
+    font-size: 10px;
 }
 
