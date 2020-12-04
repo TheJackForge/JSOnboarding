@@ -199,7 +199,7 @@ const conceptArray = [
 
 const projectsArray = [
     {
-        'title': 'Progress Bar',
+        'title': 'Progress Bar // Initiate Hack',
         'id': 'progressBar',
         'data': `
         <div class="mb-40">
@@ -225,11 +225,12 @@ const projectsArray = [
                 </div>
                 <p class="mb-5 mt-5">Now it's your turn.</p>
                 <p class="mb-5">Since we are already in the system, I can proceed directly to teaching you the Progress Hack.</p>
-                <p class="mb-5">The first thing you need to do is establish a programming environment. Let me lay it out for you step by step.</p>
+                <p class="mb-5">The first thing you need to do build a trigger and establish a programming environment. Let me lay it out for you step by step.</p>
 
-                <p class="mb-5"><span class="text-yellow-500">1//</span> HTML Sector: Create a DIV that will serve as the container for the progress bar. Try to think of this as the thing you will be hacking.</p>
+                <p class="mb-5"><span class="text-yellow-500">1//</span> HTML Sector: Create a BUTTON that will you will use as a trigger and a DIV that will serve as the container for the progress bar. Try to think of this as the thing you will be hacking.</p>
 
                 <div class="bg-black p-2">
+                    <p>[button id="progress-button"]ACTIVATE[/button]</p>
                     <p class="mb-5">[div id="progress-computer" class="progress-computer"]</p>
                     <p>[/div]</p>
                 </div>
@@ -237,6 +238,7 @@ const projectsArray = [
                 <p class="mb-5 mt-5"><span class="text-yellow-500">2//</span> HTML Sector: Next we want to embed our hack inside of the newly created container. Create another DIV that will serve as the hack and place it inside in the "progress-computer" DIV.</p>
 
                 <div class="bg-black p-2">
+                    <p>[button id="progress-button"]ACTIVATE[/button]</p>
                     <p>[div id="progress-computer" class="progress-computer"]</p>
                         <p class="pl-5">[div id="rookie-progress-hack" class="rookie-progress-hack"][/div]</p>
                     <p>[/div]</p>
@@ -251,35 +253,82 @@ const projectsArray = [
                     <p>}</p>
                 </div>
 
-                <p class="mb-5 mt-5"><span class="text-yellow-500">4//</span> CSS Sector: Now design your hack. The only components you will need to enter is the class name that you gave it (.rookie-progress-hack), the height, and the background-color you would like to inject.</p>
+                <p class="mb-5 mt-5"><span class="text-yellow-500">4//</span> CSS Sector: Now design your hack. The only components you will need to enter is the class name that you gave it (.rookie-progress-hack), the height, and the background-color you would like to inject. What you will also need to do is give the "progress-computer" a position of relative, and the "rookie-progress-hack" a position of absolute. This will position our hack over top of the "progress-computer" to streamline our connection.</p>
 
                 <div class="bg-black p-2">
 
                     <p>.progress-computer {</p>
                         <p class="pl-5">width: 100px;</p>
                         <p class="pl-5">background-color: #000;</p>
+                        <p class="pl-5">position: relative</p>
                     <p class="mb-5">}</p>
 
                     <p>.rookie-progress-hack {</p>
                         <p class="pl-5">height: 20px;</p>
                         <p class="pl-5">background-color: #EC4899;</p>
+                        <p class="pl-5">position: absolute</p>
                     <p>}</p>
                 </div>
 
-                <p class="mt-5 mb-5"><span class="text-yellow-500">4//</span> <span class="text-pink-500">JavaScript Sector:</span> Now the fun part, the actual hack. Try not to get too overwhelmed, once you get the hang of it, you'll be able to do this in your sleep. Trust me, I once actually had to.</p>
+                <p class="mt-5 mb-5"><span class="text-yellow-500">5//</span> <span class="text-pink-500">JavaScript Sector:</span> Now the fun part, the actual hack. Try not to get too overwhelmed, once you get the hang of it, you'll be able to do this in your sleep. Trust me, I once actually had to.</p>
                 <p class="mb-5">The first thing you want to do is ready your hack by assigning it to a variable. Grab it by the ID ('rookie-hack')</p>
 
                 <div class="bg-black p-2">
                         <p>const rookieHack = document.getElementById('rookie-hack')</p>
                 </div>
 
-                <p class="mt-5 mb-5"><span class="text-yellow-500">5//</span> <span class="text-pink-500">JavaScript Sector:</span> Now create a variable for width and set it to 0. The width must be set to a "let" variable because it will need to change over the course of the hack.</p>
+                <p class="mt-5 mb-5"><span class="text-yellow-500">6//</span> <span class="text-pink-500">JavaScript Sector:</span> Now create a variable for width and set it to 0. The width must be set to a "let" variable because it will need to change over the course of the hack.</p>
 
                 <div class="bg-black p-2">
                         <p>const rookieHack = document.getElementById('rookie-hack');</p>
                         <p>let width = 0;</p>
                 </div>
 
+                <p class="mt-5 mb-5"><span class="text-yellow-500">6//</span> <span class="text-pink-500">JavaScript Sector:</span> Now we need to set how we are going to attack the target. We will accomplish this by using setInterval( ) to call a function. If you look below, we must first set this to a variable, let's use "const progress." Inside this variable, we are going to store setInterval along with the function we are going to call and how often we are going to call it. We will call the function "hack" and let's set the variable to 30. This means that the function will run once every 30 milliseconds.</p>
+
+                <div class="bg-black p-2">
+                        <p>const rookieHack = document.getElementById('rookie-hack');</p>
+                        <p>let width = 0;</p>
+                        <p>const progress = setInterval(hack, 30)</p>
+                </div>
+
+                <p class="mt-5 mb-5"><span class="text-yellow-500">6//</span> <span class="text-pink-500">JavaScript Sector:</span> This is the important part of the whole hack. We need to assign what the "hack" function is going to do. In this situation, we are going to keep it really simple and inject the hack into the target computer. This will cause the width of our hack to increase every time the "hack" function is called.</p>
+
+                <div class="bg-black p-2 mb-5">
+                    <p>const rookieHack = document.getElementById('rookie-hack');</p>
+                    <p>let width = 0;</p>
+                    <p>const hack = setInterval(progress, 30)</p>
+                    <p>function progress( ) {</p>
+                        <p class="ml-5">if (width >= 100) {</p>
+                            <p class="ml-10">clearInterval(hack);</p>
+                        <p class="ml-5">} else {</p>
+                            <p class="ml-10">width++;</p>
+                            <p class="ml-10">rookieHack.style.width = width + '%';</p>
+                        }
+                    }  
+                </div>
+
+                <p class="mt-5 mb-5"><span class="text-yellow-500">7//</span> <span class="text-pink-500">JavaScript Sector:</span> Now before you attempt it yourself and potentially screw it up, let me run down all the steps for you.</p>
+                <p>1// Assign the rookieHack variable by using the 'rookie-hack' id.</p>
+                <p>2// Assign the "width" variable to 0 (Make sure to use "let")</p>
+                <p>3// Assign the "hack" variable to setInterval( progress, 30). What this will do is call the progress( ) function every 30 milliseconds</p>
+                <p>4// Create the "progress" function.</p>
+                <p>5// Assign an IF statement. Basically this and the next line state that when the "width" hits 100, the Interval will be cleared and the hack should be complete.</p>
+                <p>6// Assign an ELSE statement. If "width" does not equal 100, keep increasing it by increments of 1 (++) until it does.
+                <p class="mb-5">7// This is an internal JavaScript command that will increase the width of rookieHack by a percentage. This will be "width" + the % string.
+
+                <p class="mb-5">It's as easy as that.</p>
+                
+                <p class="mb-5">So rookie, are you ready to give it a try? Inititiate the hack and let's see if we're going home alive or if we're going to be swarmed by bloodthirsty SECURITY drones.</p>
+                
+                    <div class="p-1 flex">
+                        <button id="progress-button" class="bg-purple-600 mb-4 p-1 mr-4">HACK</button></p>
+                        <div id="progress-computer" class="progress-computer mt-2"></p>
+                            <div id="rookie-progress-hack" class="rookie-progress-hack text-center"></div>
+                        </div>
+                    </div>
+                
+                <p>Hmmmm... not bad. A little sloppy but you got the job done. If you ever need to review what you learned here tonight, the logs will always be accessible in your HUD</p>
             </div>
         </div>
 `
@@ -570,6 +619,30 @@ function progressHackComplete() {
             }
     })
 }
+
+function progressRookieHack() {
+    console.log('Rookie Hack Initiated')
+    const rookieHack = document.getElementById('rookie-progress-hack');
+        let width = 0;
+        const hack = setInterval(progress, 30)
+            function progress() {
+                if (width >= 100) {
+                clearInterval(hack);
+                    } else {
+                        width++;
+                        rookieHack.style.width = width + '%';
+                    } if (width === 100) {
+                        rookieHack.innerText = 'OK'
+                        console.log('Rookie Hack Complete // Rating: Sloppy')
+                    }
+             }  
+}
+
+main.addEventListener('click', (e) => {
+    if (e.target.id === 'progress-button') {
+        progressRookieHack();
+    }
+})
 
 main.addEventListener('click', (e) => {
     if (e.target.id === 'progress-initial-button') {
