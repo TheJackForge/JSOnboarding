@@ -1,13 +1,20 @@
 {
-  "name": "LearningPlatform",
+  "name": "learning-platform",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "A learning program.",
+  "main": "script.js",
   "scripts": {
-    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
+    "build:css": "tailwindcss build src/styles.css -o public/styles.css"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "learning",
+    "education"
+  ],
+  "author": {
+    "name": "TheJackForge",
+    "email": "jackforgedevelopment@gmail.com",
+    "url": "https://thejackforge.com"
+  },
   "license": "ISC",
   "dependencies": {
     "tailwindcss": "^2.0.1"
